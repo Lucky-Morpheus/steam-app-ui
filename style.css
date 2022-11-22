@@ -12,12 +12,40 @@
     'opsz' 40
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #202026;
+    border-radius: 2px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #343740;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #595962;
+}
+
 body {
     background: #2a2b30;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     color: #fffeff;
+    display: grid;
+    place-items: center;
 }
+
+#page-area {
+    max-width: 490px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #202026;
+}
+
+
 
 nav {
     display: flex;
@@ -25,7 +53,7 @@ nav {
 }
 
 nav div {
-    width: 100vw;
+    width: 100%;
     display: flex;
 }
 
@@ -44,6 +72,7 @@ nav .top {
 nav .top img {
     height: 2rem;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 nav .bottom {
@@ -70,6 +99,10 @@ nav .bottom button:hover {
     background-color: #595962;
 }
 
+nav .bottom button[data-menu-button] {
+    cursor: pointer;
+}
+
 nav .bottom button[data-wallet] {
     display: flex;
     gap: .4rem;
@@ -84,6 +117,7 @@ nav .bottom button[data-wallet] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .arrows div {
@@ -123,7 +157,7 @@ nav .bottom button[data-wallet] {
 }
 
 #featured-recommended .fr-slider .fr-item img {
-    width: 84vw;
+    width: 33vw;
     border-radius: 4px;
 }
 
@@ -190,8 +224,8 @@ nav .bottom button[data-wallet] {
 }
 
 #special-offers .offer-details-2 {
-    height: 8vh;
-    margin-top: .18rem;
+    height: 8%;
+    margin-top: .45rem;
     align-items: center;
     display: flex;
     gap: .4rem;
@@ -219,7 +253,7 @@ nav .bottom button[data-wallet] {
 
 
 #banner {
-    width: 100vw;
+    width: 100%;
     padding: 1rem .8rem;
     display: grid;
     place-items: center;
@@ -251,9 +285,9 @@ nav .bottom button[data-wallet] {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     background: #36363e;
-    translate: -100vw;
+    translate: -100%;
     transition: all .35s ease-out;
 }
 
@@ -266,9 +300,14 @@ nav .bottom button[data-wallet] {
     justify-content: space-between;
 }
 
+#menu .menu-nav .material-symbols-outlined {
+    cursor: pointer;
+}
+
 #menu .menu-nav img {
     height: 2rem;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 #menu ul {
@@ -286,6 +325,7 @@ nav .bottom button[data-wallet] {
     gap: .8rem;
     border-bottom: 1px solid #393a42;
     transition: background-color .15s ease;
+    cursor: pointer;
 }
 
 #menu ul li:hover {
@@ -322,8 +362,21 @@ nav .bottom button[data-wallet] {
     gap: .8rem;
     margin-bottom: .5rem;
     transition: color .1s ease;
+    cursor: pointer;
 }
 
 #menu .footer div:hover {
     color: white;
+}
+
+@media (max-width: 480px) {
+    #page-area {
+        width: 100vw;
+        border: none;
+    }
+
+    #featured-recommended .fr-slider .fr-item img {
+        width: 84vw;
+        border-radius: 4px;
+    }
 }
