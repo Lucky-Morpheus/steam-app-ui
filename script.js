@@ -57,6 +57,8 @@ function loadSpecialOffers() {
 //#endregion
 
 //#region Sliders
+
+// Featured & Recommended slider
 const frSlider = document.querySelector('.fr-slider')
 const frSliderArrows = document.querySelectorAll('#featured-recommended .arrows span')
 
@@ -81,6 +83,7 @@ frSliderArrows.forEach(arrow => {
 })
 
 
+// Special Offers slider
 const soSlider = document.querySelector('.so-slider')
 const soSliderArrows = document.querySelectorAll('#special-offers .arrows span')
 
@@ -96,7 +99,7 @@ soSliderArrows.forEach(arrow => {
         }
         
         if (arrow.textContent === 'arrow_forward_ios') {
-            if (currentSoSliderPosition === 3) return
+            if (currentSoSliderPosition === 1) return
             currentSoSliderPosition += 1
         }
 
@@ -119,7 +122,7 @@ const backToPageButton = document.querySelector('[data-back-menu-button]')
 
 backToPageButton.onclick = () => {
     menuArea.style.opacity = 0
-    menuArea.style.translate = '-100vw'
+    menuArea.style.translate = '-100%'
     setTimeout(() => menuArea.style.opacity = 1, 450)
 }
 
